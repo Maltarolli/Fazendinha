@@ -1,0 +1,61 @@
+[gd_scene load_steps=9 format=3 uid="uid://dm1y6rh85daj3"]
+
+[ext_resource type="Script" path="res://script/player.gd" id="1_8yi3t"]
+[ext_resource type="Texture2D" uid="uid://bsda58054ski5" path="res://assets/Tiny Wonder Forest 1.0/characters/main character/walk and idle.png" id="1_0041l"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_x54mb"]
+radius = 4.07998
+height = 17.1186
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n16jn"]
+atlas = ExtResource("1_0041l")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uu1rd"]
+atlas = ExtResource("1_0041l")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lloxm"]
+atlas = ExtResource("1_0041l")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_om1hb"]
+atlas = ExtResource("1_0041l")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wua4y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n16jn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uu1rd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lloxm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_om1hb")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 3.0
+}]
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_8yi3t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+scale = Vector2(-1.4706, 1.14523)
+shape = SubResource("CapsuleShape2D_x54mb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_wua4y")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.63303
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3.5, 3.5)

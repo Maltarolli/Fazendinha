@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cbey31ypfl4nq"]
+
+[ext_resource type="PackedScene" uid="uid://51c0e4rvdmx5" path="res://scene/cenario.tscn" id="1_xur3i"]
+[ext_resource type="PackedScene" uid="uid://dm1y6rh85daj3" path="res://scene/player.tscn" id="2_6yysu"]
+
+[node name="Principal" type="Node2D"]
+
+[node name="grama" parent="." instance=ExtResource("1_xur3i")]
+
+[node name="Player" parent="grama" instance=ExtResource("2_6yysu")]
+position = Vector2(365, 139)
