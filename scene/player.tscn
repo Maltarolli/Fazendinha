@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dm1y6rh85daj3"]
+[gd_scene load_steps=25 format=3 uid="uid://dm1y6rh85daj3"]
 
 [ext_resource type="Script" path="res://script/player.gd" id="1_8yi3t"]
 [ext_resource type="Texture2D" uid="uid://bsda58054ski5" path="res://assets/Tiny Wonder Forest 1.0/characters/main character/walk and idle.png" id="1_0041l"]
@@ -6,6 +6,70 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_x54mb"]
 radius = 4.07998
 height = 17.1186
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a17hq"]
+atlas = ExtResource("1_0041l")
+region = Rect2(0, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bahq5"]
+atlas = ExtResource("1_0041l")
+region = Rect2(24, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v8rwk"]
+atlas = ExtResource("1_0041l")
+region = Rect2(48, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ywxu"]
+atlas = ExtResource("1_0041l")
+region = Rect2(72, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_scbbm"]
+atlas = ExtResource("1_0041l")
+region = Rect2(96, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2bq4m"]
+atlas = ExtResource("1_0041l")
+region = Rect2(120, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0647q"]
+atlas = ExtResource("1_0041l")
+region = Rect2(144, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1l380"]
+atlas = ExtResource("1_0041l")
+region = Rect2(168, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jq0bf"]
+atlas = ExtResource("1_0041l")
+region = Rect2(0, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wwr4k"]
+atlas = ExtResource("1_0041l")
+region = Rect2(24, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xh8cn"]
+atlas = ExtResource("1_0041l")
+region = Rect2(48, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hm8dp"]
+atlas = ExtResource("1_0041l")
+region = Rect2(72, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7v7hm"]
+atlas = ExtResource("1_0041l")
+region = Rect2(96, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3mjqj"]
+atlas = ExtResource("1_0041l")
+region = Rect2(120, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ftooq"]
+atlas = ExtResource("1_0041l")
+region = Rect2(144, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_do36c"]
+atlas = ExtResource("1_0041l")
+region = Rect2(168, 24, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n16jn"]
 atlas = ExtResource("1_0041l")
@@ -25,6 +89,64 @@ region = Rect2(72, 0, 24, 24)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wua4y"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a17hq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bahq5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v8rwk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ywxu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_scbbm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2bq4m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0647q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1l380")
+}],
+"loop": true,
+"name": &"direita",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jq0bf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wwr4k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xh8cn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hm8dp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7v7hm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3mjqj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ftooq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_do36c")
+}],
+"loop": true,
+"name": &"esquerda",
+"speed": 10.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_n16jn")
@@ -53,9 +175,11 @@ shape = SubResource("CapsuleShape2D_x54mb")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_wua4y")
-animation = &"idle"
+animation = &"direita"
 autoplay = "idle"
-frame_progress = 0.63303
+frame_progress = 0.763757
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3.5, 3.5)
+position_smoothing_enabled = true
+position_smoothing_speed = 6.0

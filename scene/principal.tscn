@@ -1,11 +1,82 @@
-[gd_scene load_steps=3 format=3 uid="uid://cbey31ypfl4nq"]
+[gd_scene load_steps=13 format=3 uid="uid://cbey31ypfl4nq"]
 
 [ext_resource type="PackedScene" uid="uid://51c0e4rvdmx5" path="res://scene/cenario.tscn" id="1_xur3i"]
 [ext_resource type="PackedScene" uid="uid://dm1y6rh85daj3" path="res://scene/player.tscn" id="2_6yysu"]
+[ext_resource type="Texture2D" uid="uid://be2hs1sy1g1g3" path="res://assets/Crop_Spritesheet.png" id="3_2jo3x"]
+[ext_resource type="Script" path="res://scene/tomate.gd" id="3_08r7t"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l6gi8"]
+atlas = ExtResource("3_2jo3x")
+region = Rect2(80, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ljh1a"]
+atlas = ExtResource("3_2jo3x")
+region = Rect2(64, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_40qtp"]
+atlas = ExtResource("3_2jo3x")
+region = Rect2(48, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y0nm1"]
+atlas = ExtResource("3_2jo3x")
+region = Rect2(32, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_owtt4"]
+atlas = ExtResource("3_2jo3x")
+region = Rect2(16, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_igg21"]
+atlas = ExtResource("3_2jo3x")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5ou34"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l6gi8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ljh1a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_40qtp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y0nm1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_owtt4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_igg21")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ryvc6"]
+size = Vector2(12, 12)
 
 [node name="Principal" type="Node2D"]
+position = Vector2(8, -7)
 
 [node name="grama" parent="." instance=ExtResource("1_xur3i")]
 
 [node name="Player" parent="grama" instance=ExtResource("2_6yysu")]
-position = Vector2(365, 139)
+position = Vector2(364, 150)
+
+[node name="Tomate" type="Area2D" parent="."]
+position = Vector2(305, 144)
+monitorable = false
+script = ExtResource("3_08r7t")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Tomate"]
+sprite_frames = SubResource("SpriteFrames_5ou34")
+frame_progress = 0.178151
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tomate"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_ryvc6")
+
+[connection signal="body_entered" from="Tomate" to="Tomate" method="_on_body_entered"]
