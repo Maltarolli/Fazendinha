@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://djamy0roxfc18"]
+
+[node name="hub" type="CanvasLayer"]
+
+[node name="sementes_tomate" type="Label" parent="."]
+offset_left = 6.0
+offset_top = 2.0
+offset_right = 46.0
+offset_bottom = 25.0
+theme_override_colors/font_color = Color(1, 0.0405029, 0.0223527, 1)
+theme_override_font_sizes/font_size = 20

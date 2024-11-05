@@ -88,6 +88,5 @@ position = Vector2(344, 142)
 
 [connection signal="body_entered" from="cenario/Bau" to="Player" method="_on_bau_body_entered"]
 [connection signal="body_entered" from="cenario/Tomate" to="cenario/Tomate" method="_on_body_entered"]
-[connection signal="body_exited" from="cenario/Tomate" to="cenario/Tomate" method="_on_body_exited"]
 
 [editable path="hub"]

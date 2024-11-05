@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://51c0e4rvdmx5"]
+[gd_scene load_steps=23 format=4 uid="uid://51c0e4rvdmx5"]
 
 [ext_resource type="Texture2D" uid="uid://vpf0p73yc8tf" path="res://assets/Tiny Wonder Forest 1.0/tilemaps/summer tilemap.png" id="1_m0usi"]
 [ext_resource type="Texture2D" uid="uid://e57rd7rysoor" path="res://assets/Tiny Wonder Forest 1.0/items&objects/summer and spring items.png" id="2_i80lt"]
@@ -343,6 +343,78 @@ texture = ExtResource("1_m0usi")
 [sub_resource type="TileSet" id="TileSet_bpki3"]
 sources/0 = SubResource("TileSetAtlasSource_xvevk")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ne1vp"]
+atlas = ExtResource("1_m0usi")
+region = Rect2(128, 112, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gs1vt"]
+atlas = ExtResource("1_m0usi")
+region = Rect2(128, 128, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0wpd8"]
+atlas = ExtResource("1_m0usi")
+region = Rect2(128, 144, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5dneq"]
+atlas = ExtResource("1_m0usi")
+region = Rect2(128, 160, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yu40d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ne1vp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gs1vt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0wpd8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5dneq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4w3e8"]
+atlas = ExtResource("1_m0usi")
+region = Rect2(144, 112, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m1gov"]
+atlas = ExtResource("1_m0usi")
+region = Rect2(144, 128, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7acpn"]
+atlas = ExtResource("1_m0usi")
+region = Rect2(144, 144, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nn15c"]
+atlas = ExtResource("1_m0usi")
+region = Rect2(144, 160, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7nuiy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4w3e8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m1gov")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7acpn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nn15c")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hys5d"]
 texture = ExtResource("2_i80lt")
 7:4/0 = 0
@@ -621,8 +693,34 @@ tile_set = SubResource("TileSet_snif2")
 
 [node name="Detalhe2" type="TileMapLayer" parent="Camada2"]
 position = Vector2(2, -3)
-tile_map_data = PackedByteArray("AAAOAAUAAAAAAAcAAAAOAAYAAAAAAAgAAAAPAAUAAAABAAcAAAAPAAYAAAABAAgAAAAQAAoAAAAIAAkAAAAMAAgAAAAIAAcAAAALAAYAAAAJAAcAAAAJAAkAAAAIAAcAAAAcAAMAAAAFAAwAAAAdAAMAAAAGAAwAAAAeAAMAAAAGAAwAAAAfAAMAAAAGAAwAAAAgAAMAAAAGAAwAAAAhAAMAAAAGAAwAAAAiAAMAAAAGAAwAAAAjAAMAAAAGAAwAAAAcAAQAAAAFAA4AAAAdAAQAAAAGAA4AAAAeAAQAAAAGAA4AAAAfAAQAAAAGAA4AAAAgAAQAAAAGAA4AAAAhAAQAAAAGAA4AAAAiAAQAAAAGAA4AAAAjAAQAAAAGAA4AAAAkAAQAAAAHAA4AAAAkAAMAAAAHAAwAAAAcAAAAAAAEAAQAAAAiAA0AAAAEAAQAAAAcABAAAAAFAAEAAAAiABIAAAAFAAEAAAA=")
+tile_map_data = PackedByteArray("AAAOAAUAAAAAAAcAAAAOAAYAAAAAAAgAAAAPAAUAAAABAAcAAAAPAAYAAAABAAgAAAAcAAMAAAAFAAwAAAAdAAMAAAAGAAwAAAAeAAMAAAAGAAwAAAAfAAMAAAAGAAwAAAAgAAMAAAAGAAwAAAAhAAMAAAAGAAwAAAAiAAMAAAAGAAwAAAAjAAMAAAAGAAwAAAAcAAQAAAAFAA4AAAAdAAQAAAAGAA4AAAAeAAQAAAAGAA4AAAAfAAQAAAAGAA4AAAAgAAQAAAAGAA4AAAAhAAQAAAAGAA4AAAAiAAQAAAAGAA4AAAAjAAQAAAAGAA4AAAAkAAQAAAAHAA4AAAAkAAMAAAAHAAwAAAAcAAAAAAAEAAQAAAAiAA0AAAAEAAQAAAAcABAAAAAFAAEAAAAiABIAAAAFAAEAAAA=")
 tile_set = SubResource("TileSet_bpki3")
+
+[node name="Flutuante" type="AnimatedSprite2D" parent="Camada2"]
+position = Vector2(203, 104)
+rotation = 0.69671
+sprite_frames = SubResource("SpriteFrames_yu40d")
+autoplay = "default"
+frame_progress = 0.223221
+
+[node name="Flutuante2" type="AnimatedSprite2D" parent="Camada2"]
+position = Vector2(151, 81)
+sprite_frames = SubResource("SpriteFrames_yu40d")
+autoplay = "default"
+frame_progress = 0.564299
+
+[node name="flutuante3" type="AnimatedSprite2D" parent="Camada2"]
+position = Vector2(232, 159)
+sprite_frames = SubResource("SpriteFrames_7nuiy")
+autoplay = "default"
+frame_progress = 0.628485
+
+[node name="Flutuante4" type="AnimatedSprite2D" parent="Camada2"]
+position = Vector2(174, 130)
+rotation = -1.17343
+sprite_frames = SubResource("SpriteFrames_7nuiy")
+autoplay = "default"
+frame_progress = 0.192553
 
 [node name="Camada3" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAAWAAQAAAAAAAAAAAAWAAcAAAAJAAYAAAAXAAcAAAAJAAYAAAAVAAcAAAAJAAYAAAAXAAgAAAAKAAYAAAAWAAgAAAAKAAYAAAAVAAgAAAAKAAYAAAASAAgAAAAFAA4AAAAaAAcAAAAKAA8AAAAMAAIAAAAKAA8AAAAQAAIAAAAKAA8AAAAJAAIAAAAKAA0AAAAHAAcAAAAKAA0AAAAYAAcAAAAEAA8AAAAYAAgAAAAAAA0AAAAYAAkAAAABAAwAAAAYAAoAAAAAAAwAAAA=")

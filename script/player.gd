@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+var quant_sementes : int = 0
 var velocidade_player : float = 125.00
 var direcao_player : Vector2 = Vector2(0, 0)
 
@@ -33,3 +34,9 @@ func movimentacao() -> void:
 		
 	velocity = direcao_player.normalized() * velocidade_player
 	move_and_slide()
+
+
+
+
+func _on_bau_body_entered(body: Node2D) -> void:
+	Dados.sementes += 1
