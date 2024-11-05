@@ -15,3 +15,4 @@ func _on_body_entered(body: Node2D) -> void:
 	while $AnimatedSprite2D.frame != 5:
 		await get_tree().create_timer(3.0).timeout
 		$AnimatedSprite2D.frame += 1
+	
