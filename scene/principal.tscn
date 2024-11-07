@@ -1,5 +1,6 @@
-[gd_scene load_steps=14 format=3 uid="uid://cbey31ypfl4nq"]
+[gd_scene load_steps=15 format=3 uid="uid://cbey31ypfl4nq"]
 
+[ext_resource type="Script" path="res://scene/principal.gd" id="1_wrc8w"]
 [ext_resource type="PackedScene" uid="uid://51c0e4rvdmx5" path="res://scene/cenario.tscn" id="1_xur3i"]
 [ext_resource type="PackedScene" uid="uid://dm1y6rh85daj3" path="res://scene/player.tscn" id="2_6yysu"]
 [ext_resource type="PackedScene" uid="uid://dcf7l4788h5f" path="res://scene/tomate.tscn" id="3_gx2am"]
@@ -98,6 +99,7 @@ _data = {
 
 [node name="Principal" type="Node2D"]
 position = Vector2(8, -7)
+script = ExtResource("1_wrc8w")
 
 [node name="cenario" parent="." instance=ExtResource("1_xur3i")]
 
@@ -107,7 +109,7 @@ position = Vector2(315, 119)
 [node name="Tomate" parent="cenario" instance=ExtResource("3_gx2am")]
 
 [node name="borboleta" parent="cenario" instance=ExtResource("4_1hdjo")]
-position = Vector2(379, 140)
+position = Vector2(408, 134)
 
 [node name="Player" parent="." instance=ExtResource("2_6yysu")]
 position = Vector2(344, 142)
@@ -122,10 +124,9 @@ script = ExtResource("8_bcy67")
 
 [node name="ColorRect" type="ColorRect" parent="AnimationPlayer"]
 self_modulate = Color(0, 0, 0.0588235, 0)
-offset_left = -51.0
-offset_top = -31.0
-offset_right = -11.0
-offset_bottom = 9.0
+offset_left = -37.0
+offset_top = -40.0
+offset_right = 3.0
 scale = Vector2(31.08, 17.84)
 color = Color(0, 0, 0.0588235, 1)
 

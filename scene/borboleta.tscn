@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://b3ob8m6r3cyhu"]
+[gd_scene load_steps=20 format=3 uid="uid://b3ob8m6r3cyhu"]
 
 [ext_resource type="Texture2D" uid="uid://cutd8bei0sseu" path="res://assets/butterfly spritesheet.png" id="1_f1a2f"]
 
@@ -124,43 +124,6 @@ animations = [{
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_o2a4h"]
 
-[sub_resource type="Animation" id="Animation_u2uth"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("borboleta:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(359, 132)]
-}
-
-[sub_resource type="Animation" id="Animation_g6atm"]
-resource_name = "voando"
-length = 5.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("borboleta:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.0333333, 2.5, 4.06667, 5.03333),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(369, 111), Vector2(370, 109), Vector2(355, 93), Vector2(346, 92)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_8q65h"]
-_data = {
-"RESET": SubResource("Animation_u2uth"),
-"voando": SubResource("Animation_g6atm")
-}
-
 [node name="borboleta" type="Area2D"]
 position = Vector2(359, 132)
 scale = Vector2(0.3, 0.3)
@@ -169,14 +132,7 @@ scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_dn5jr")
 animation = &"borboleta"
 autoplay = "borboleta"
-frame_progress = 0.280251
+frame_progress = 0.698588
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_o2a4h")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-root_node = NodePath("../..")
-libraries = {
-"": SubResource("AnimationLibrary_8q65h")
-}
-autoplay = "voando"
