@@ -1,14 +1,26 @@
 extends AnimationPlayer
 
+var dia : bool = true
 
-# Called when the node enters the scene tree for the first time.
+var tempo_animacao : float = 60.0
+
+
 func _ready() -> void:
-	pass # Replace with function body.
+	pass
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	await get_tree().create_timer(10.0).timeout
-	$".".play("noite")
-	await get_tree().create_timer(70.0).timeout
-	$".".play("dia")
+	dia_noite()
+	
+
+func dia_noite() -> void:
+	if dia:
+		$".".play("noite")
+		#Espera o mesmo tempo da animacao para nao bugar
+		await get_tree().create_timer(tempo_animacao).timeout
+		dia = false
+	else: 
+		$".".play("dia")
+		#Espera o mesmo tempo da animacao para nao bugar
+		await get_tree().create_timer(tempo_animacao).timeout
+		dia = true
