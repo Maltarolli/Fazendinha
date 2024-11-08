@@ -8,7 +8,6 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
-	$"../../hub/sementes_tomate".text = str("sementes: ", Dados.sementes, " tomates: ", Dados.tomates)
 	if Dados.sementes >= 1 and encostou and Input.is_action_pressed("space") and tem_planta == false: 
 		tem_planta = true
 		show()

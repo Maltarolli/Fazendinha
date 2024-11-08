@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://fgx0vg458ejo"]
 
 [ext_resource type="Texture2D" uid="uid://be2hs1sy1g1g3" path="res://assets/Crop_Spritesheet.png" id="1_r804i"]
-[ext_resource type="Script" path="res://scene/milho.gd" id="1_t1gt1"]
+[ext_resource type="Script" path="res://script/milho.gd" id="1_t1gt1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o7opq"]
 size = Vector2(18, 19)

@@ -3,6 +3,7 @@ extends CharacterBody2D
 var quant_sementes : int = 0
 var velocidade_player : float = 125.00
 var direcao_player : Vector2 = Vector2(0, 0)
+var tecla_up : bool = false
 
 func _ready() -> void:
 	pass 
@@ -22,8 +23,11 @@ func movimentacao() -> void:
 	else:
 		direcao_player.x = 0
 	if Input.is_action_pressed("mv_up"):
+		$AnimatedSprite2D.play("cima")
+		tecla_up = true
 		direcao_player.y = -1
 	elif Input.is_action_pressed("mv_down"):
+		$AnimatedSprite2D.play("baixo")
 		direcao_player.y = 1
 	else:
 		direcao_player.y = 0

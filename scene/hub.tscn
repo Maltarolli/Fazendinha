@@ -1,11 +1,35 @@
-[gd_scene format=3 uid="uid://djamy0roxfc18"]
+[gd_scene load_steps=2 format=3 uid="uid://djamy0roxfc18"]
+
+[ext_resource type="Script" path="res://script/hub.gd" id="1_rp554"]
 
 [node name="hub" type="CanvasLayer"]
+script = ExtResource("1_rp554")
 
 [node name="sementes_tomate" type="Label" parent="."]
 offset_left = 6.0
 offset_top = 2.0
 offset_right = 46.0
 offset_bottom = 25.0
-theme_override_colors/font_color = Color(1, 0.0405029, 0.0223527, 1)
-theme_override_font_sizes/font_size = 20
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "Semente"
+
+[node name="tomates" type="Label" parent="."]
+offset_left = 6.0
+offset_top = 33.0
+offset_right = 98.0
+offset_bottom = 68.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "Tomate"
+
+[node name="Hora" type="Label" parent="."]
+offset_left = 1042.0
+offset_top = 10.0
+offset_right = 1108.0
+offset_bottom = 45.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "Hora "

@@ -1,6 +1,6 @@
-[gd_scene load_steps=16 format=3 uid="uid://cbey31ypfl4nq"]
+[gd_scene load_steps=17 format=3 uid="uid://cbey31ypfl4nq"]
 
-[ext_resource type="Script" path="res://script/principal.gd" id="1_wrc8w"]
+[ext_resource type="Script" path="res://scene/principal.gd" id="1_wrc8w"]
 [ext_resource type="PackedScene" uid="uid://51c0e4rvdmx5" path="res://scene/cenario.tscn" id="1_xur3i"]
 [ext_resource type="PackedScene" uid="uid://dm1y6rh85daj3" path="res://scene/player.tscn" id="2_6yysu"]
 [ext_resource type="PackedScene" uid="uid://dcf7l4788h5f" path="res://scene/tomate.tscn" id="3_gx2am"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://c4id78rf6y31e" path="res://scene/bau.tscn" id="4_emxre"]
 [ext_resource type="PackedScene" uid="uid://djamy0roxfc18" path="res://scene/hub.tscn" id="5_6eea8"]
 [ext_resource type="Script" path="res://script/dia_noite.gd" id="8_bcy67"]
+[ext_resource type="Script" path="res://scene/hora.gd" id="9_8ag6d"]
 
 [sub_resource type="Animation" id="Animation_d4gix"]
 length = 120.0
@@ -139,6 +140,14 @@ color = Color(0, 0, 0.0588235, 1)
 position = Vector2(191, 96)
 shape = SubResource("RectangleShape2D_vxlwg")
 
-[connection signal="body_entered" from="cenario/Bau" to="Player" method="_on_bau_body_entered"]
+[node name="Hora" type="Label" parent="."]
+offset_left = 334.0
+offset_top = 150.0
+offset_right = 374.0
+offset_bottom = 173.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "Hora "
+script = ExtResource("9_8ag6d")
 
-[editable path="hub"]
+[connection signal="body_entered" from="cenario/Bau" to="Player" method="_on_bau_body_entered"]

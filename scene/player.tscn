@@ -1,11 +1,31 @@
-[gd_scene load_steps=25 format=3 uid="uid://dm1y6rh85daj3"]
+[gd_scene load_steps=33 format=3 uid="uid://dm1y6rh85daj3"]
 
 [ext_resource type="Script" path="res://script/player.gd" id="1_8yi3t"]
 [ext_resource type="Texture2D" uid="uid://bsda58054ski5" path="res://assets/Tiny Wonder Forest 1.0/characters/main character/walk and idle.png" id="1_0041l"]
+[ext_resource type="Texture2D" uid="uid://de73s7by5bodw" path="res://assets/Tiny Wonder Forest 1.0/characters/main character/baixo1.png" id="2_7vr2y"]
+[ext_resource type="Texture2D" uid="uid://bh4ix3xeywsau" path="res://assets/Tiny Wonder Forest 1.0/characters/main character/baixo2.png" id="3_ruyjm"]
+[ext_resource type="Texture2D" uid="uid://b6riofcc83gw0" path="res://assets/Tiny Wonder Forest 1.0/characters/main character/cima1.png" id="4_h84tk"]
+[ext_resource type="Texture2D" uid="uid://dafq21fwey54o" path="res://assets/Tiny Wonder Forest 1.0/characters/main character/cima2.png" id="5_y8i3s"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_x54mb"]
 radius = 4.07998
 height = 17.1186
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k2dcn"]
+atlas = ExtResource("2_7vr2y")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tb2mp"]
+atlas = ExtResource("3_ruyjm")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p7148"]
+atlas = ExtResource("4_h84tk")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u4qeu"]
+atlas = ExtResource("5_y8i3s")
+region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a17hq"]
 atlas = ExtResource("1_0041l")
@@ -89,6 +109,28 @@ region = Rect2(72, 0, 24, 24)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wua4y"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k2dcn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tb2mp")
+}],
+"loop": true,
+"name": &"baixo",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p7148")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u4qeu")
+}],
+"loop": true,
+"name": &"cima",
+"speed": 3.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_a17hq")
@@ -175,9 +217,9 @@ shape = SubResource("CapsuleShape2D_x54mb")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_wua4y")
-animation = &"direita"
+animation = &"cima"
 autoplay = "idle"
-frame_progress = 0.763757
+frame_progress = 0.016883
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3.5, 3.5)
