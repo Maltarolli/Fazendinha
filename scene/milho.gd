@@ -1,5 +1,6 @@
 extends Area2D
 
+var encostou : bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -14,5 +15,5 @@ func _process(delta: float) -> void:
 
 func crescer() -> void:
 	while $AnimatedSprite2D.frame !=5:
-		await get_tree().create_timer(5.0).timeout
+		await get_tree().create_timer(1.0).timeout
 		$AnimatedSprite2D.frame += 1
