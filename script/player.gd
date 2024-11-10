@@ -40,7 +40,15 @@ func movimentacao() -> void:
 	move_and_slide()
 
 
-
-
 func _on_bau_body_entered(body: Node2D) -> void:
 	Dados.sementes += 1
+
+
+func _on_entrada_casa_body_entered(body: Node2D) -> void:
+	position = $"../teleporte_dentro_casa".position
+	
+
+
+func _on_saida_casa_body_entered(body: Node2D) -> void:
+	position = $"../cenario/teleporte_fora_casa".position
+	

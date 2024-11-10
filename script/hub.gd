@@ -15,7 +15,6 @@ func _process(delta: float) -> void:
 	$sementes_tomate.text = str("Sementes: ", Dados.sementes)
 	$tomates.text = str("Tomates: ", Dados.tomates)
 	$Hora.text = str(obter_hora())
-	print()
 	
 func obter_hora() -> String:
 	tempo = Time.get_datetime_dict_from_system()

@@ -7,9 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://b6riofcc83gw0" path="res://assets/Tiny Wonder Forest 1.0/characters/main character/cima1.png" id="4_h84tk"]
 [ext_resource type="Texture2D" uid="uid://dafq21fwey54o" path="res://assets/Tiny Wonder Forest 1.0/characters/main character/cima2.png" id="5_y8i3s"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_x54mb"]
-radius = 4.07998
-height = 17.1186
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xxvl1"]
+size = Vector2(6.11995, 5.23912)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k2dcn"]
 atlas = ExtResource("2_7vr2y")
@@ -211,9 +210,10 @@ animations = [{
 script = ExtResource("1_8yi3t")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 1)
-scale = Vector2(-1.4706, 1.14523)
-shape = SubResource("CapsuleShape2D_x54mb")
+position = Vector2(0.5, 6)
+rotation = -3.14159
+scale = Vector2(1.4706, -1.14523)
+shape = SubResource("RectangleShape2D_xxvl1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_wua4y")

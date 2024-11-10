@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://script/principal.gd" id="1_wrc8w"]
 [ext_resource type="PackedScene" uid="uid://51c0e4rvdmx5" path="res://scene/cenario.tscn" id="1_xur3i"]
 [ext_resource type="PackedScene" uid="uid://dm1y6rh85daj3" path="res://scene/player.tscn" id="2_6yysu"]
+[ext_resource type="PackedScene" uid="uid://dsh3rcr2i8bj0" path="res://scene/dentro_casa.tscn" id="2_72i5c"]
 [ext_resource type="PackedScene" uid="uid://dcf7l4788h5f" path="res://scene/tomate.tscn" id="3_gx2am"]
 [ext_resource type="PackedScene" uid="uid://b3ob8m6r3cyhu" path="res://scene/borboleta.tscn" id="4_1hdjo"]
 [ext_resource type="PackedScene" uid="uid://c4id78rf6y31e" path="res://scene/bau.tscn" id="4_emxre"]
@@ -97,12 +98,12 @@ _data = {
 "teste_noite": SubResource("Animation_ipn6p")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vxlwg"]
-size = Vector2(182, 140)
-
 [node name="Principal" type="Node2D"]
 position = Vector2(8, -7)
 script = ExtResource("1_wrc8w")
+
+[node name="dentro_casa" parent="." instance=ExtResource("2_72i5c")]
+position = Vector2(-153, -599)
 
 [node name="cenario" parent="." instance=ExtResource("1_xur3i")]
 
@@ -115,7 +116,7 @@ position = Vector2(315, 119)
 position = Vector2(408, 134)
 
 [node name="Player" parent="." instance=ExtResource("2_6yysu")]
-position = Vector2(344, 142)
+position = Vector2(139, -399)
 
 [node name="hub" parent="." instance=ExtResource("5_6eea8")]
 
@@ -133,12 +134,18 @@ offset_right = 3.0
 scale = Vector2(31.08, 17.84)
 color = Color(0, 0, 0.0588235, 1)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="teleporte_dentro_casa" type="ColorRect" parent="."]
+offset_left = 93.0
+offset_top = -325.0
+offset_right = 133.0
+offset_bottom = -285.0
+scale = Vector2(0.599999, 0.199998)
+color = Color(1, 1, 1, 0)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(191, 96)
-shape = SubResource("RectangleShape2D_vxlwg")
-
+[connection signal="body_entered" from="dentro_casa/saida_casa" to="Player" method="_on_saida_casa_body_entered"]
+[connection signal="body_entered" from="cenario/Camada3/entrada_casa" to="Player" method="_on_entrada_casa_body_entered"]
 [connection signal="body_entered" from="cenario/Bau" to="Player" method="_on_bau_body_entered"]
 
+[editable path="dentro_casa"]
+[editable path="cenario"]
 [editable path="hub"]
