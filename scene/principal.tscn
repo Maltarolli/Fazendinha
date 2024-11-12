@@ -116,7 +116,7 @@ position = Vector2(315, 119)
 position = Vector2(408, 134)
 
 [node name="Player" parent="." instance=ExtResource("2_6yysu")]
-position = Vector2(139, -399)
+position = Vector2(105, -340)
 
 [node name="hub" parent="." instance=ExtResource("5_6eea8")]
 
@@ -143,6 +143,8 @@ scale = Vector2(0.599999, 0.199998)
 color = Color(1, 1, 1, 0)
 
 [connection signal="body_entered" from="dentro_casa/saida_casa" to="Player" method="_on_saida_casa_body_entered"]
+[connection signal="body_entered" from="dentro_casa/cama" to="Player" method="_on_cama_body_entered"]
+[connection signal="body_exited" from="dentro_casa/cama" to="Player" method="_on_cama_body_exited"]
 [connection signal="body_entered" from="cenario/Camada3/entrada_casa" to="Player" method="_on_entrada_casa_body_entered"]
 [connection signal="body_entered" from="cenario/Bau" to="Player" method="_on_bau_body_entered"]
 

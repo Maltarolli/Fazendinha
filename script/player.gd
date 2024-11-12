@@ -52,3 +52,16 @@ func _on_entrada_casa_body_entered(body: Node2D) -> void:
 func _on_saida_casa_body_entered(body: Node2D) -> void:
 	position = $"../cenario/teleporte_fora_casa".position
 	
+
+
+
+
+
+func _on_cama_body_entered(body: Node2D) -> void:
+	$"../dentro_casa/dialogo_cama".show()
+	$"../dentro_casa/dialogo_cama/AnimationPlayer".play("escrita_cama")
+
+
+func _on_cama_body_exited(body: Node2D) -> void:
+	$"../dentro_casa/dialogo_cama".hide()
+	
