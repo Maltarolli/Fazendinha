@@ -12,7 +12,6 @@ func _process(delta: float) -> void:
 
 func plantar() -> void:
 	if Input.is_action_just_released("click_left") and Dados.sementes >= 1:
-		Dados.sementes -= 1
 		var instance = node.instantiate()
 		instance.position = get_global_mouse_position()
 		add_child(instance)

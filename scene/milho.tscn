@@ -68,3 +68,7 @@ sprite_frames = SubResource("SpriteFrames_xufog")
 animation = &"milho"
 frame = 1
 frame_progress = 0.921619
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
