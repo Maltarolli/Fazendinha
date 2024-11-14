@@ -67,7 +67,7 @@ script = ExtResource("1_7uuue")
 sprite_frames = SubResource("SpriteFrames_g456e")
 animation = &"npc_vendas"
 autoplay = "npc_vendas"
-frame_progress = 0.0281103
+frame_progress = 0.714914
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 1)
