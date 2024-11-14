@@ -1,0 +1,83 @@
+[gd_scene load_steps=12 format=3 uid="uid://buwxkm1hgwei3"]
+
+[ext_resource type="Script" path="res://script/npc_vendas.gd" id="1_7uuue"]
+[ext_resource type="Texture2D" uid="uid://dghryc7vcrimx" path="res://assets/Tiny Wonder Forest 1.0/characters/mushrooms/blue mushroom sheet.png" id="1_id0qe"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oifp6"]
+atlas = ExtResource("1_id0qe")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n8cqb"]
+atlas = ExtResource("1_id0qe")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g8n2v"]
+atlas = ExtResource("1_id0qe")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_43uxa"]
+atlas = ExtResource("1_id0qe")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oeq1y"]
+atlas = ExtResource("1_id0qe")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rugca"]
+atlas = ExtResource("1_id0qe")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g456e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oifp6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n8cqb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g8n2v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_43uxa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oeq1y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rugca")
+}],
+"loop": true,
+"name": &"npc_vendas",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_30r2j"]
+size = Vector2(16, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fgyck"]
+radius = 5.0
+
+[node name="npc_vendas" type="Area2D"]
+monitorable = false
+script = ExtResource("1_7uuue")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_g456e")
+animation = &"npc_vendas"
+autoplay = "npc_vendas"
+frame_progress = 0.0281103
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 1)
+shape = SubResource("RectangleShape2D_30r2j")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_fgyck")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

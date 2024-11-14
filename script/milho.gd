@@ -24,12 +24,12 @@ func colher() -> void:
 	if $AnimatedSprite2D.frame == 5:
 		pode_colher = true
 	if pode_colher and encostou and Input.is_action_just_released("click_left"):
+		Dados.milho += 1
 		queue_free()
 
 
 func _on_mouse_entered() -> void:
 	mouse_milho = true
-	print("encostou")
 
 
 func _on_body_entered(body: Node2D) -> void:

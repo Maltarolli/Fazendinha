@@ -15,7 +15,7 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 25
 text = "Semente"
 
-[node name="tomates" type="Label" parent="."]
+[node name="vegetais" type="Label" parent="."]
 offset_left = 6.0
 offset_top = 33.0
 offset_right = 98.0
@@ -23,7 +23,7 @@ offset_bottom = 68.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 25
-text = "Tomate"
+text = "Vegetais"
 
 [node name="Hora" type="Label" parent="."]
 offset_left = 1042.0
@@ -33,3 +33,12 @@ offset_bottom = 45.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 25
 text = "Hora "
+
+[node name="Dinheiro" type="Label" parent="."]
+offset_left = 9.0
+offset_top = 65.0
+offset_right = 76.0
+offset_bottom = 88.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "Dinheiro"

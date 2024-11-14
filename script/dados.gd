@@ -3,6 +3,7 @@ extends Node
 var sementes : int = 0
 var tomates : int = 0
 var milho : int = 0
+var dinheiro : int = 0
 
 func _ready() -> void:
 	pass
