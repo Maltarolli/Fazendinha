@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cbey31ypfl4nq"]
+[gd_scene load_steps=18 format=3 uid="uid://cbey31ypfl4nq"]
 
 [ext_resource type="Script" path="res://script/principal.gd" id="1_wrc8w"]
 [ext_resource type="PackedScene" uid="uid://51c0e4rvdmx5" path="res://scene/cenario.tscn" id="1_xur3i"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://djamy0roxfc18" path="res://scene/hub.tscn" id="5_6eea8"]
 [ext_resource type="Script" path="res://script/dia_noite.gd" id="8_bcy67"]
 [ext_resource type="PackedScene" uid="uid://buwxkm1hgwei3" path="res://scene/npc_vendas.tscn" id="10_gi7f5"]
+[ext_resource type="PackedScene" uid="uid://csd7pknbbr1vc" path="res://scene/gatinho.tscn" id="11_7iw47"]
 
 [sub_resource type="Animation" id="Animation_d4gix"]
 length = 120.0
@@ -144,7 +145,10 @@ scale = Vector2(0.599999, 0.199998)
 color = Color(1, 1, 1, 0)
 
 [node name="npc_vendas" parent="." instance=ExtResource("10_gi7f5")]
-position = Vector2(202, 195)
+position = Vector2(134, 209)
+
+[node name="gatinho" parent="." instance=ExtResource("11_7iw47")]
+position = Vector2(28, -426)
 
 [connection signal="body_entered" from="dentro_casa/saida_casa" to="Player" method="_on_saida_casa_body_entered"]
 [connection signal="body_entered" from="dentro_casa/cama" to="Player" method="_on_cama_body_entered"]

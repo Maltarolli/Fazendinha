@@ -46,15 +46,12 @@ func _on_bau_body_entered(body: Node2D) -> void:
 
 func _on_entrada_casa_body_entered(body: Node2D) -> void:
 	position = $"../teleporte_dentro_casa".position
-	
+	Dados.entrou_na_casa = true
 
 
 func _on_saida_casa_body_entered(body: Node2D) -> void:
 	position = $"../cenario/teleporte_fora_casa".position
-	
-
-
-
+	Dados.entrou_na_casa = false
 
 
 func _on_cama_body_entered(body: Node2D) -> void:
