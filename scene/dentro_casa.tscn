@@ -1,7 +1,10 @@
-[gd_scene load_steps=12 format=4 uid="uid://dsh3rcr2i8bj0"]
+[gd_scene load_steps=16 format=4 uid="uid://dsh3rcr2i8bj0"]
 
 [ext_resource type="Texture2D" uid="uid://swrvp1q1sek8" path="res://assets/Tiny Wonder Forest 1.0/tilemaps/inside.png" id="1_qlvum"]
 [ext_resource type="Texture2D" uid="uid://8i0jqpocr3vo" path="res://assets/Tiny Wonder Forest 1.0/items&objects/furniture.png" id="2_7tgh8"]
+[ext_resource type="Texture2D" uid="uid://c4gp4ctwcxa1c" path="res://assets/my_create/balao1.png" id="3_kdx34"]
+[ext_resource type="Script" path="res://script/cama.gd" id="3_u075t"]
+[ext_resource type="Texture2D" uid="uid://bf27pik4m14im" path="res://assets/my_create/balao2.png" id="4_wgy1x"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hjnn4"]
 texture = ExtResource("1_qlvum")
@@ -161,6 +164,20 @@ size = Vector2(28, 3)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f141g"]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_ba30e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_kdx34")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_wgy1x")
+}],
+"loop": true,
+"name": &"balao",
+"speed": 5.0
+}]
+
 [sub_resource type="Animation" id="Animation_yp6pc"]
 length = 0.001
 tracks/0/type = "value"
@@ -232,6 +249,7 @@ shape = SubResource("RectangleShape2D_ndauu")
 position = Vector2(154, 171)
 scale = Vector2(0.72, 1.28)
 monitorable = false
+script = ExtResource("3_u075t")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="cama"]
 position = Vector2(-1.38889, -1.5625)
@@ -242,20 +260,31 @@ shape = SubResource("RectangleShape2D_x72xb")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="cama"]
 shape = SubResource("RectangleShape2D_f141g")
 
-[node name="dialogo_cama" type="Label" parent="."]
-offset_left = 167.0
-offset_top = 124.0
-offset_right = 239.0
-offset_bottom = 155.0
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="cama"]
+position = Vector2(38.8889, -24.2188)
+scale = Vector2(1.58507, 1)
+sprite_frames = SubResource("SpriteFrames_ba30e")
+animation = &"balao"
+flip_h = true
+
+[node name="dialogo_cama" type="Label" parent="cama/AnimatedSprite2D"]
+offset_left = -24.5345
+offset_top = -10.9375
+offset_right = 204.465
+offset_bottom = 82.0625
+scale = Vector2(0.215, 0.215)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 10
+theme_override_font_sizes/font_size = 32
 text = "Nossa como a 
 cama esta suja"
 visible_characters = 0
 visible_ratio = 0.0
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="dialogo_cama"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="cama/AnimatedSprite2D/dialogo_cama"]
 libraries = {
 "": SubResource("AnimationLibrary_07jg6")
 }
+
+[connection signal="body_entered" from="cama" to="cama" method="_on_body_entered"]
+[connection signal="body_exited" from="cama" to="cama" method="_on_body_exited"]

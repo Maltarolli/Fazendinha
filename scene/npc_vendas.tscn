@@ -1,7 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://buwxkm1hgwei3"]
+[gd_scene load_steps=15 format=3 uid="uid://buwxkm1hgwei3"]
 
 [ext_resource type="Script" path="res://script/npc_vendas.gd" id="1_7uuue"]
 [ext_resource type="Texture2D" uid="uid://dghryc7vcrimx" path="res://assets/Tiny Wonder Forest 1.0/characters/mushrooms/blue mushroom sheet.png" id="1_id0qe"]
+[ext_resource type="Texture2D" uid="uid://c4gp4ctwcxa1c" path="res://assets/my_create/balao1.png" id="3_t3wvn"]
+[ext_resource type="Texture2D" uid="uid://bf27pik4m14im" path="res://assets/my_create/balao2.png" id="4_5rpjs"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oifp6"]
 atlas = ExtResource("1_id0qe")
@@ -59,6 +61,20 @@ size = Vector2(16, 16)
 [sub_resource type="CircleShape2D" id="CircleShape2D_fgyck"]
 radius = 5.0
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_3xpt5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_t3wvn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_5rpjs")
+}],
+"loop": true,
+"name": &"balao",
+"speed": 3.0
+}]
+
 [node name="npc_vendas" type="Area2D"]
 monitorable = false
 script = ExtResource("1_7uuue")
@@ -78,6 +94,24 @@ shape = SubResource("RectangleShape2D_30r2j")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_fgyck")
+
+[node name="balao" type="AnimatedSprite2D" parent="."]
+position = Vector2(-10, -12)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_3xpt5")
+animation = &"balao"
+autoplay = "balao"
+frame_progress = 0.63277
+
+[node name="texto_balao" type="Label" parent="balao"]
+offset_left = -28.0
+offset_top = -8.0
+offset_right = 55.0
+offset_bottom = 15.0
+scale = Vector2(0.22, 0.22)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "Quer algo?"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

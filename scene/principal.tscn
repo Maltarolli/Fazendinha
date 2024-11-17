@@ -151,8 +151,6 @@ position = Vector2(134, 209)
 position = Vector2(28, -426)
 
 [connection signal="body_entered" from="dentro_casa/saida_casa" to="Player" method="_on_saida_casa_body_entered"]
-[connection signal="body_entered" from="dentro_casa/cama" to="Player" method="_on_cama_body_entered"]
-[connection signal="body_exited" from="dentro_casa/cama" to="Player" method="_on_cama_body_exited"]
 [connection signal="body_entered" from="cenario/Camada3/entrada_casa" to="Player" method="_on_entrada_casa_body_entered"]
 [connection signal="body_entered" from="cenario/Bau" to="Player" method="_on_bau_body_entered"]
 

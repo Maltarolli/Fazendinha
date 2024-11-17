@@ -1,7 +1,9 @@
-[gd_scene load_steps=62 format=3 uid="uid://csd7pknbbr1vc"]
+[gd_scene load_steps=65 format=3 uid="uid://csd7pknbbr1vc"]
 
 [ext_resource type="Texture2D" uid="uid://e3j8tcoti268" path="res://assets/Cat Sprite Sheet.png" id="1_034yb"]
 [ext_resource type="Script" path="res://script/gatinho.gd" id="1_gj71m"]
+[ext_resource type="Texture2D" uid="uid://yuv5fqrd5n0w" path="res://assets/my_create/coracao1.png" id="3_nftt5"]
+[ext_resource type="Texture2D" uid="uid://clc61av4ssr0b" path="res://assets/my_create/coracao2.png" id="4_aoeeu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e5614"]
 size = Vector2(11, 11)
@@ -443,7 +445,22 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_dmpax"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_nftt5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_aoeeu")
+}],
+"loop": true,
+"name": &"coracao",
+"speed": 4.0
+}]
+
 [node name="gatinho" type="Area2D"]
+monitorable = false
 script = ExtResource("1_gj71m")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -456,3 +473,13 @@ sprite_frames = SubResource("SpriteFrames_tj45r")
 animation = &"brincando"
 autoplay = "idle"
 frame_progress = 0.291908
+
+[node name="coracao" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, -7)
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_dmpax")
+animation = &"coracao"
+autoplay = "coracao"
+frame_progress = 0.607206
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
