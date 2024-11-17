@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0fo8k2fnefbq"]
+
+[ext_resource type="Texture2D" uid="uid://l4cwvi67ivtn" path="res://assets/my_create/racao.png" id="1_wijd3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3sa4c"]
+size = Vector2(30, 27)
+
+[node name="racao_galinha" type="Area2D"]
+scale = Vector2(0.3, 0.3)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_wijd3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 0.5)
+shape = SubResource("RectangleShape2D_3sa4c")

@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dcwmmywo26dw5"]
+
+[ext_resource type="Texture2D" uid="uid://cpnaq0idplpxg" path="res://assets/my_create/ovo.png" id="1_rcjho"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7xxs4"]
+radius = 15.0
+
+[node name="ovo" type="Area2D"]
+scale = Vector2(0.2, 0.2)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_rcjho")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(6.31089e-30, 5)
+shape = SubResource("CircleShape2D_7xxs4")

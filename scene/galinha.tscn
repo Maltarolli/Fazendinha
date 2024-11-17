@@ -1,0 +1,103 @@
+[gd_scene load_steps=14 format=3 uid="uid://bujuwvo4uslm5"]
+
+[ext_resource type="Texture2D" uid="uid://dkrbn3b7ogqy3" path="res://assets/Hana Caraka Animals - Free/Chicken/Chicken down.png" id="1_72cqy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qs4j7"]
+atlas = ExtResource("1_72cqy")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f0wg7"]
+atlas = ExtResource("1_72cqy")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xrm24"]
+atlas = ExtResource("1_72cqy")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_71hqx"]
+atlas = ExtResource("1_72cqy")
+region = Rect2(48, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wbveh"]
+atlas = ExtResource("1_72cqy")
+region = Rect2(64, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w5vgk"]
+atlas = ExtResource("1_72cqy")
+region = Rect2(80, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e6550"]
+atlas = ExtResource("1_72cqy")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c5o36"]
+atlas = ExtResource("1_72cqy")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_csuq7"]
+atlas = ExtResource("1_72cqy")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3xs3s"]
+atlas = ExtResource("1_72cqy")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r8oom"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qs4j7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f0wg7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xrm24")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_71hqx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wbveh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w5vgk")
+}],
+"loop": true,
+"name": &"andando_baixo",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e6550")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c5o36")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_csuq7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3xs3s")
+}],
+"loop": true,
+"name": &"parada_baixo",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_46dqg"]
+size = Vector2(9.16667, 8.33333)
+
+[node name="galinha" type="Area2D"]
+scale = Vector2(1.2, 1.2)
+monitorable = false
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_r8oom")
+animation = &"parada_baixo"
+autoplay = "parada_baixo"
+frame_progress = 0.845111
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.416667, 3.33333)
+shape = SubResource("RectangleShape2D_46dqg")
