@@ -12,9 +12,6 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	$sementes_tomate.text = str("Sementes: ", Dados.sementes)
-	$vegetais.text = str("Vegetais: ", Dados.tomates + Dados.milho)
-	$Dinheiro.text = str("Dinheiro: ", Dados.dinheiro)
 	$Hora.text = str(obter_hora())
 	
 func obter_hora() -> String:
