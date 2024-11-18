@@ -7,11 +7,12 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
-	fogueira_acessa()
+	pass
 
 
 func _on_body_entered(body: Node2D) -> void:
 	$balao.show()
+	fogueira_acessa()
 	$balao/Label.text = str("Fazer fogueira?")
 	await  get_tree().create_timer(1.0).timeout
 	$balao/Label.text = str("Graveto e folha")
@@ -19,7 +20,7 @@ func _on_body_entered(body: Node2D) -> void:
 
 func _on_body_exited(body: Node2D) -> void:
 	$balao.hide()
-
+	
 
 func fogueira_acessa() -> void:
 	if Dados.graveto >= 1 and Dados.folha >= 1:

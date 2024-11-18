@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dr4aqfw3bk1xv"]
+
+[ext_resource type="Script" path="res://script/graveto.gd" id="1_ccgty"]
+[ext_resource type="Texture2D" uid="uid://dx1jhu07q8fj8" path="res://assets/my_create/graveto.png" id="1_vfqfe"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nbyub"]
+size = Vector2(35.3563, 7.07007)
+
+[node name="graveto" type="Area2D"]
+scale = Vector2(0.3, 0.3)
+monitorable = false
+script = ExtResource("1_ccgty")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_vfqfe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.98682e-07, -1.66667)
+rotation = -0.784975
+shape = SubResource("RectangleShape2D_nbyub")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

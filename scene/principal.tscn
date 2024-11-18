@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://cbey31ypfl4nq"]
+[gd_scene load_steps=26 format=3 uid="uid://cbey31ypfl4nq"]
 
 [ext_resource type="Script" path="res://script/principal.gd" id="1_wrc8w"]
 [ext_resource type="PackedScene" uid="uid://51c0e4rvdmx5" path="res://scene/cenario.tscn" id="1_xur3i"]
@@ -14,6 +14,8 @@
 [ext_resource type="PackedScene" uid="uid://csd7pknbbr1vc" path="res://scene/gatinho.tscn" id="11_7iw47"]
 [ext_resource type="PackedScene" uid="uid://bujuwvo4uslm5" path="res://scene/galinha.tscn" id="12_m40bl"]
 [ext_resource type="Script" path="res://script/galinha.gd" id="13_tewkr"]
+[ext_resource type="PackedScene" uid="uid://d1ggqu4tow277" path="res://scene/folha_seca.tscn" id="15_3cwm4"]
+[ext_resource type="PackedScene" uid="uid://dr4aqfw3bk1xv" path="res://scene/graveto.tscn" id="16_tol40"]
 
 [sub_resource type="Animation" id="Animation_d4gix"]
 length = 120.0
@@ -201,6 +203,12 @@ libraries = {
 
 [node name="fogueira" parent="." instance=ExtResource("7_hk11v")]
 position = Vector2(280, 285)
+
+[node name="folha_seca" parent="." instance=ExtResource("15_3cwm4")]
+position = Vector2(366, 213)
+
+[node name="graveto" parent="." instance=ExtResource("16_tol40")]
+position = Vector2(340, 209)
 
 [connection signal="body_entered" from="dentro_casa/saida_casa" to="Player" method="_on_saida_casa_body_entered"]
 [connection signal="body_entered" from="cenario/Camada3/entrada_casa" to="Player" method="_on_entrada_casa_body_entered"]
