@@ -8,6 +8,9 @@ var ovo : int = 0
 
 var dinheiro : int = 0
 
+var graveto : int = 0
+var folha : int = 0
+
 #saber quando o player entrou na casa, para iniciar animação do gatinho
 var entrou_na_casa = true
 

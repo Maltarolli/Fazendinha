@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://cbey31ypfl4nq"]
+[gd_scene load_steps=24 format=3 uid="uid://cbey31ypfl4nq"]
 
 [ext_resource type="Script" path="res://script/principal.gd" id="1_wrc8w"]
 [ext_resource type="PackedScene" uid="uid://51c0e4rvdmx5" path="res://scene/cenario.tscn" id="1_xur3i"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://b3ob8m6r3cyhu" path="res://scene/borboleta.tscn" id="4_1hdjo"]
 [ext_resource type="PackedScene" uid="uid://c4id78rf6y31e" path="res://scene/bau.tscn" id="4_emxre"]
 [ext_resource type="PackedScene" uid="uid://djamy0roxfc18" path="res://scene/hub.tscn" id="5_6eea8"]
+[ext_resource type="PackedScene" uid="uid://dg8k5aeyyosl0" path="res://scene/fogueira.tscn" id="7_hk11v"]
 [ext_resource type="Script" path="res://script/dia_noite.gd" id="8_bcy67"]
 [ext_resource type="PackedScene" uid="uid://buwxkm1hgwei3" path="res://scene/npc_vendas.tscn" id="10_gi7f5"]
 [ext_resource type="PackedScene" uid="uid://csd7pknbbr1vc" path="res://scene/gatinho.tscn" id="11_7iw47"]
@@ -197,6 +198,9 @@ script = ExtResource("13_tewkr")
 libraries = {
 "": SubResource("AnimationLibrary_vixdv")
 }
+
+[node name="fogueira" parent="." instance=ExtResource("7_hk11v")]
+position = Vector2(280, 285)
 
 [connection signal="body_entered" from="dentro_casa/saida_casa" to="Player" method="_on_saida_casa_body_entered"]
 [connection signal="body_entered" from="cenario/Camada3/entrada_casa" to="Player" method="_on_entrada_casa_body_entered"]

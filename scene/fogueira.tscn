@@ -1,0 +1,80 @@
+[gd_scene load_steps=12 format=3 uid="uid://dg8k5aeyyosl0"]
+
+[ext_resource type="Script" path="res://script/fogueira.gd" id="1_e2kk0"]
+[ext_resource type="Texture2D" uid="uid://8o4amhgchu4v" path="res://assets/my_create/pedra_pequena.png" id="1_iygfh"]
+[ext_resource type="Texture2D" uid="uid://c4gp4ctwcxa1c" path="res://assets/my_create/balao1.png" id="3_0yktd"]
+[ext_resource type="Texture2D" uid="uid://bf27pik4m14im" path="res://assets/my_create/balao2.png" id="4_b44ud"]
+[ext_resource type="Texture2D" uid="uid://bs6ex0qatipc8" path="res://assets/fogueira/Bonfire_1.png" id="5_7pn3q"]
+[ext_resource type="Texture2D" uid="uid://y3ten5ayh72v" path="res://assets/fogueira/Bonfire_2.png" id="6_44ucu"]
+[ext_resource type="Texture2D" uid="uid://bnk7tdij5ip74" path="res://assets/fogueira/Bonfire_3.png" id="7_21uc0"]
+[ext_resource type="Texture2D" uid="uid://drjqpcca3yixi" path="res://assets/fogueira/Bonfire_4.png" id="8_22n4h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vuhqo"]
+size = Vector2(19, 15)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7q28q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_0yktd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_b44ud")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0344r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_7pn3q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_44ucu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_21uc0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_22n4h")
+}],
+"loop": true,
+"name": &"fogueira",
+"speed": 5.0
+}]
+
+[node name="fogueira" type="Area2D"]
+script = ExtResource("1_e2kk0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(4.5, 5.5)
+shape = SubResource("RectangleShape2D_vuhqo")
+
+[node name="pedra" type="Sprite2D" parent="."]
+texture = ExtResource("1_iygfh")
+
+[node name="balao" type="AnimatedSprite2D" parent="."]
+position = Vector2(-14, -12.5)
+scale = Vector2(0.875, 0.84375)
+sprite_frames = SubResource("SpriteFrames_7q28q")
+
+[node name="Label" type="Label" parent="balao"]
+offset_left = -27.4286
+offset_top = -6.51852
+offset_right = 442.571
+offset_bottom = 81.4815
+scale = Vector2(0.115, 0.115)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 64
+text = "Fazer fogueira?"
+
+[node name="fogueira_acessa" type="AnimatedSprite2D" parent="."]
+position = Vector2(4, -7)
+sprite_frames = SubResource("SpriteFrames_0344r")
+animation = &"fogueira"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
