@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://djamy0roxfc18"]
+[gd_scene load_steps=10 format=3 uid="uid://djamy0roxfc18"]
 
 [ext_resource type="Script" path="res://script/hub.gd" id="1_rp554"]
 [ext_resource type="Script" path="res://script/inventario.gd" id="2_l6o60"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://bjtv6bvbem58f" path="res://assets/Tiny Wonder Forest 1.0/characters/main character/portrait female.png" id="4_fg71f"]
 [ext_resource type="Texture2D" uid="uid://be2hs1sy1g1g3" path="res://assets/Crop_Spritesheet.png" id="5_yyyq1"]
 [ext_resource type="Texture2D" uid="uid://cpnaq0idplpxg" path="res://assets/my_create/ovo.png" id="6_5l85n"]
+[ext_resource type="Texture2D" uid="uid://cy5ovr7quuwmm" path="res://assets/my_create/folha_seca.png" id="7_rtjxg"]
+[ext_resource type="Texture2D" uid="uid://dx1jhu07q8fj8" path="res://assets/my_create/graveto.png" id="8_vr8qs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nvliq"]
 
@@ -100,6 +102,38 @@ scale = Vector2(1.235, 1.235)
 texture = ExtResource("6_5l85n")
 
 [node name="Label_quant_ovo" type="Label" parent="inventario/item_ovo"]
+offset_left = 2.42915
+offset_top = -0.809717
+offset_right = 42.4291
+offset_bottom = 87.1903
+scale = Vector2(0.26, 0.26)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 64
+text = "1"
+
+[node name="item_folha" type="Sprite2D" parent="inventario"]
+position = Vector2(112, 534)
+scale = Vector2(1.235, 1.235)
+texture = ExtResource("7_rtjxg")
+
+[node name="Label_quant_folha" type="Label" parent="inventario/item_folha"]
+offset_left = 2.42915
+offset_top = -0.809717
+offset_right = 42.4291
+offset_bottom = 87.1903
+scale = Vector2(0.26, 0.26)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 64
+text = "1"
+
+[node name="item_graveto" type="Sprite2D" parent="inventario"]
+position = Vector2(164, 471)
+scale = Vector2(1.235, 1.235)
+texture = ExtResource("8_vr8qs")
+
+[node name="Label_quant_graveto" type="Label" parent="inventario/item_graveto"]
 offset_left = 2.42915
 offset_top = -0.809717
 offset_right = 42.4291
