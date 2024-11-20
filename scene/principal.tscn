@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://cbey31ypfl4nq"]
+[gd_scene load_steps=27 format=3 uid="uid://cbey31ypfl4nq"]
 
 [ext_resource type="Script" path="res://script/principal.gd" id="1_wrc8w"]
 [ext_resource type="PackedScene" uid="uid://51c0e4rvdmx5" path="res://scene/cenario.tscn" id="1_xur3i"]
@@ -16,6 +16,7 @@
 [ext_resource type="Script" path="res://script/galinha.gd" id="13_tewkr"]
 [ext_resource type="PackedScene" uid="uid://d1ggqu4tow277" path="res://scene/folha_seca.tscn" id="15_3cwm4"]
 [ext_resource type="PackedScene" uid="uid://dr4aqfw3bk1xv" path="res://scene/graveto.tscn" id="16_tol40"]
+[ext_resource type="PackedScene" uid="uid://jyd6yyy3udk1" path="res://scene/arvore.tscn" id="17_bsdsk"]
 
 [sub_resource type="Animation" id="Animation_d4gix"]
 length = 120.0
@@ -209,6 +210,9 @@ position = Vector2(366, 213)
 
 [node name="graveto" parent="." instance=ExtResource("16_tol40")]
 position = Vector2(340, 209)
+
+[node name="arvore" parent="." instance=ExtResource("17_bsdsk")]
+position = Vector2(254, 208)
 
 [connection signal="body_entered" from="dentro_casa/saida_casa" to="Player" method="_on_saida_casa_body_entered"]
 [connection signal="body_entered" from="cenario/Camada3/entrada_casa" to="Player" method="_on_entrada_casa_body_entered"]
