@@ -1,6 +1,8 @@
 extends Area2D
 
 var encostou : bool = false
+var pode_cortar : bool = true
+
 var node_graveto = preload("res://scene/graveto.tscn")
 var node_folha = preload("res://scene/folha_seca.tscn")
 
@@ -22,11 +24,12 @@ func _on_body_exited(body: Node2D) -> void:
 	
 	
 func cortar() -> void:
-	if encostou and Input.is_action_just_released("click_left"):
+	if encostou and Input.is_action_just_released("click_left") and pode_cortar:
 		$AnimatedSprite2D.play("cortando")
 		await get_tree().create_timer(5.0).timeout
 		$AnimatedSprite2D.play("cortada")
-		
+		pode_cortar = false
+
 		#dropa o graveto apos cortar
 		var instance_graveto = node_graveto.instantiate()
 		instance_graveto.position = $drop_graveto.position
@@ -37,3 +40,12 @@ func cortar() -> void:
 		instance_folha.position = $drop_folha.position
 		add_child(instance_folha)
 		
+		#chama oma mama
+		crescer()
+		
+		
+func crescer() -> void:
+	if pode_cortar == false:
+		await get_tree().create_timer(5.0).timeout
+		pode_cortar = true
+		$AnimatedSprite2D.play("normal")
