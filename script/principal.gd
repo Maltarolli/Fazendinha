@@ -1,8 +1,8 @@
 extends Node2D
 
-var node = preload("res://scene/milho.tscn")
 var node_racao = preload("res://scene/racao_galinha.tscn")
 var node_ovo = preload("res://scene/ovo.tscn")
+var node_area_plantar = preload("res://scene/area_plantar.tscn")
 
 
 func _ready() -> void:
@@ -10,18 +10,18 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
-	plantar()
 	racao()
+	area_de_plantar()
 
 
-# planta milho
-func plantar() -> void:
-	if Input.is_action_just_released("click_left") and Dados.sementes >= 1:
-		var instance = node.instantiate()
-		instance.position = get_global_mouse_position()
+#Area de plantar
+func area_de_plantar() -> void:
+	if Input.is_action_just_released("arar"):
+		var instance = node_area_plantar.instantiate()
+		instance.position = $Player.position
 		add_child(instance)
-		
-		
+
+
 #coloca ração
 func racao() -> void: 
 	if Input.is_action_just_released("space"):

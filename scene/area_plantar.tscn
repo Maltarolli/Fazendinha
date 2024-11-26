@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://ci0hkwud87xy6"]
+
+[ext_resource type="Script" path="res://script/area_plantar.gd" id="1_7ydju"]
+[ext_resource type="Texture2D" uid="uid://dn2b4jumpqhku" path="res://assets/Tiny Wonder Forest 1.0/tilemaps/spring tilemap.png" id="1_aowpb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r2vt2"]
+size = Vector2(12, 11)
+
+[node name="area_plantar" type="Area2D"]
+monitorable = false
+script = ExtResource("1_7ydju")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_aowpb")
+hframes = 10
+vframes = 15
+frame = 126
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_r2vt2")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 1.0
+offset_bottom = 1.0
+color = Color(1, 1, 1, 0)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
